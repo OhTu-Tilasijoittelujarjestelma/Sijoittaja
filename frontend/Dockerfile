@@ -1,5 +1,5 @@
 FROM node:alpine
-WORKDIR /usr/src/app
+WORKDIR /usr/src/app/frontend
 
 # Install the application dependencies
 COPY package* ./
@@ -7,10 +7,11 @@ RUN npm ci
 # Copy in the source code
 COPY . .
 
-# Expose port WIP
-EXPOSE 4173
 RUN npm run build
-CMD [ "npm", "run", "preview"]
+
+# Expose port WIP
+EXPOSE 4173 
+CMD [ "npm",  "run", "preview", "--", "--host"]
 
 #alla oleva buildaa imagen, toimii vain toukon käyttäjällä (ehkä)
 # docker build frontend/ -t l0uko/sijoittaja-frontend

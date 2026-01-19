@@ -15,7 +15,15 @@ spec:
         app: sijoittaja
     spec:
       containers: #here is the used docker image
-        - name: sijoittaja-front
+        - name: sijoittaja
           image: l0uko/sijoittaja-frontend:latest
-          #ports:
-          #  - contanerPort: 4173
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 6443
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"

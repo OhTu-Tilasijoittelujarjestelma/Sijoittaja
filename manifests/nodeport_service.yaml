@@ -1,17 +1,16 @@
 #currently copied from materials, placeholder values
-#
+
 #apiVersion: v1
 #kind: Service
 #metadata:
-#  name: sijoittaja-svc
+#  name: sijoittaja-np
 #spec:
 #  type: NodePort
 #  selector:
 #    app: sijoittaja
 #  ports:
 #    - name: http
-#      nodePort: 30080
+#      nodePort: 35107
 #      protocol: TCP
-#      port: 1234
-#      targetPort: 3000
-#
+#      port: 3000
+#      targetPort: 4173

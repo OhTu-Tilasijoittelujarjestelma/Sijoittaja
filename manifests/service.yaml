@@ -14,12 +14,10 @@ kind: Service
 metadata:
   name: sijoittaja-svc
 spec:
-  type: NodePort
   selector:
     app: sijoittaja # This is the app as declared in the deployment.
   ports:
     - name: http
-      nodePort: 39053 # This is the port that is available outside. Value for nodePort can be between 30000-32767
       protocol: TCP
-      port: 1234 # This is a port that is available to the cluster, in this case it can be ~ anything
+      port: 6443 # This is a port that is available to the cluster, in this case it can be ~ anything
       targetPort: 4173 # This is the target port

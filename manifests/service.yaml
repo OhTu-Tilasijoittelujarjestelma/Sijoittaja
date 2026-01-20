@@ -1,0 +1,23 @@
+#currently copied from materials, placeholder values
+
+# Let us create a file service.yaml into the manifests folder.
+#  We need the service to do the following things:
+
+#  Declare that we want a Service
+#  Declare which port to listen to
+#  Declare the application where the request should be directed to
+#  Declare the port where the request should be directed to
+
+#The following service.yaml definition will let TCP traffic from port 2345 to port 3000:
+apiVersion: v1
+kind: Service
+metadata:
+  name: sijoittaja-svc
+spec:
+  selector:
+    app: sijoittaja
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 4173
+  type: ClusterIP

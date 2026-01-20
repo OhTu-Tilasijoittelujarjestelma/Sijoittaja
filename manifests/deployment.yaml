@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sijoittaja-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sijoittaja
+  template:
+    metadata:
+      labels:
+        app: sijoittaja
+    spec:
+      containers:
+        - name: sijoittaja
+          image: l0uko/sijoittaja-frontend:latest
+          ports:
+            - containerPort: 4173

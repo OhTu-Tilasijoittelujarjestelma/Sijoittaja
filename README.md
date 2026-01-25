@@ -45,7 +45,6 @@ npm run dev:frontend
 - `npm run dev:backend` - Start backend in development mode
 - `npm run start:backend` - Start backend in production mode
 - `npm run lint:backend` - Run linter for backend code
-- `npm run prettier:backend` - Format backend code with Prettier
 
 #### Frontend
 

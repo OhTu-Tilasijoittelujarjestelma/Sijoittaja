@@ -1,6 +1,5 @@
-FROM node:alpine
-
-WORKDIR /app
+FROM node:20
+WORKDIR /usr/src/app/backend
 
 COPY package*.json ./
 
@@ -10,6 +9,8 @@ COPY . .
 
 EXPOSE 3000
 
+RUN chmod -R 777 *
+
 RUN npm run tsc
 
-CMD ["node", "build/index.js"]
+CMD [ "npm", "run", "start"]

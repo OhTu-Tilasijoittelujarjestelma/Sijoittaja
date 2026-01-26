@@ -2,11 +2,9 @@ services:
   backend:
     build: backend
     ports:
-      - "8000:5000"
-  postgres: #WIP
-    image: "postgres:alpine"
+      - "3000:3000"
 
   frontend: 
     build: frontend
     ports: 
-      - "8000:5000"
+      - "4173:4173"

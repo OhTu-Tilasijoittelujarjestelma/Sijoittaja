@@ -40,6 +40,10 @@ npm run dev:frontend
 
 - `npm run install:all` - Install dependencies for both backend and frontend
 
+#### Database
+
+- `npm run start:db` - Start PostgreSQL database in Docker container
+
 #### Backend
 
 - `npm run dev:backend` - Start backend in development mode

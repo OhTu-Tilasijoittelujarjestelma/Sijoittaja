@@ -4,7 +4,7 @@ services:
     ports:
       - "3000:3000"
 
-  frontend: 
+  frontend:
     build: frontend
-    ports: 
+    ports:
       - "4173:4173"

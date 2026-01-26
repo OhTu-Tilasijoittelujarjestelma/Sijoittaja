@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sijoittaja-frontend-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sijoittaja-frontend
+  template:
+    metadata:
+      labels:
+        app: sijoittaja-frontend
+    spec:
+      containers:
+        - name: sijoittaja-frontend
+          image: l0uko/sijoittaja-frontend:staging
+          ports:
+            - containerPort: 4173
+          resources:
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+            requests:
+              memory: "50Mi"
+              cpu: "50m"

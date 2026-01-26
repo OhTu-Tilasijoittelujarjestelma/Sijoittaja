@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: sijoittaja-frontend
-          image: l0uko/sijoittaja-frontend:staging
+          image: l0uko/sijoittaja-frontend:kokeilu3
           ports:
             - containerPort: 4173
           resources:

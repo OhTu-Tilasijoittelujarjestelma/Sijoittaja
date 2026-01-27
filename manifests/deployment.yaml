@@ -17,7 +17,29 @@ spec:
         app: sijoittaja
     spec:
       containers:
+<<<<<<< HEAD
         - name: sijoittaja
+=======
+        - name: sijoittaja-frontend
+>>>>>>> origin/main
           image: l0uko/sijoittaja-frontend:staging
           ports:
             - containerPort: 4173
+          resources:
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+            requests:
+              memory: "50Mi"
+              cpu: "50m"
+        - name: sijoittaja-backend
+          image: l0uko/sijoittaja-backend:staging
+          ports:
+            - containerPort: 3000
+          resources:
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+            requests:
+              memory: "50Mi"
+              cpu: "50m"

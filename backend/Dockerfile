@@ -1,16 +1,15 @@
-FROM ubuntu:latest
-WORKDIR /usr/local/app
+FROM node:alpine
 
-# Install the application dependencies
-# Depends on language WIP
+WORKDIR /app
 
-# Copy in the source code
+COPY package*.json ./
+
+RUN npm ci
+
 COPY . .
-# Expose port WIP
+
 EXPOSE 3000
 
-# Setup an app user so the container doesn't run as the root user
-RUN useradd app
-USER app
+RUN npm run tsc
 
-CMD [ "npm" ]
+CMD ["node", "build/index.js"]

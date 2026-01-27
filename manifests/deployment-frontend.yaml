@@ -1,6 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  annotations:
+    alpha.image.policy.openshift.io/resolve-names: "*"
+    image.openshift.io/triggers: >-
+      [{"from":{"kind":"ImageStreamTag","name":"sijoittaja:staging","namespace":"ohtuprojekti-staging"},"fieldPath":"spec.template.spec.containers[?(@.name==\"sijoittaja-frontend\")].image","pause":"false"}]
   name: sijoittaja-frontend-dep
 spec:
   replicas: 1
@@ -14,7 +18,7 @@ spec:
     spec:
       containers:
         - name: sijoittaja-frontend
-          image: l0uko/sijoittaja-frontend:kokeilu11
+          image: sijoittaja-frontend:staging
           ports:
             - containerPort: 4173
           resources:

@@ -16,7 +16,11 @@ spec:
         - name: sijoittaja-backend
           image: l0uko/sijoittaja-backend:kokeilu3
           ports:
-            - containerPort: 3000
+            - containerPort: 3443
+          volumeMounts:
+          - name: backend-certs
+            mountPath: /etc/tls/private
+            readOnly: true
           resources:
             limits:
               memory: "512Mi"
@@ -24,3 +28,7 @@ spec:
             requests:
               memory: "50Mi"
               cpu: "50m"
+      volumes:
+      - name: backend-certs
+        secret:
+          secretName: backend-tls

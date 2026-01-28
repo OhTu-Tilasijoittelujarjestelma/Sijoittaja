@@ -1,5 +1,5 @@
 async function pingServer(): Promise<string> {
-  const response = await fetch("http://sijoittaja-backend-svc/ping", {
+  const response = await fetch("https://sijoittaja-backend-svc/ping", {
     method: "GET",
   });
 

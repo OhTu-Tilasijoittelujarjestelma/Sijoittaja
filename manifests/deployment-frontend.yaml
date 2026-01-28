@@ -4,7 +4,7 @@ metadata:
   annotations:
     alpha.image.policy.openshift.io/resolve-names: "*"
     image.openshift.io/triggers: >-
-      [{"from":{"kind":"ImageStreamTag","name":"sijoittaja:staging","namespace":"ohtuprojekti-staging"},"fieldPath":"spec.template.spec.containers[?(@.name==\"sijoittaja-frontend\")].image","pause":"false"}]
+      [{"from":{"kind":"ImageStreamTag","name":"sijoittaja-frontend:staging","namespace":"ohtuprojekti-staging"},"fieldPath":"spec.template.spec.containers[?(@.name==\"sijoittaja-frontend\")].image","pause":"false"}]
   name: sijoittaja-frontend-dep
 spec:
   replicas: 1

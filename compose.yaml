@@ -1,10 +1,25 @@
 services:
+  db:
+    image: postgres:alpine
+    environment:
+      - POSTGRES_PASSWORD=example
+    ports:
+      - "5432:5432"
+
   backend:
     build: backend
     ports:
       - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://postgres:example@db:5432/postgres
 
-  frontend: 
+  frontend:
     build: frontend
-    ports: 
+    ports:
       - "4173:4173"
+    depends_on:
+      - backend
+    environment:
+      - VITE_API_URL=http://localhost:3000

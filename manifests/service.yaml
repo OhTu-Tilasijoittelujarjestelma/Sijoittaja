@@ -15,7 +15,7 @@ metadata:
   name: sijoittaja-svc
 spec:
   selector:
-    app: sijoittaja
+    app: sijoittaja-frontend
   ports:
     - protocol: TCP
       port: 4173

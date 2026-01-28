@@ -24,6 +24,8 @@ npm run install:all
 
 4. Set up environment variables
 
+**Backend environment variables**
+
 Create a `.env` file in the `backend` directory with the following contents:
 
 ```bash
@@ -47,6 +49,22 @@ npm run start:db
 **Option B: Using your own PostgreSQL instance**
 
 Configure `DATABASE_URL` to point to your existing PostgreSQL database.
+
+**Frontend environment variables**
+
+Create `.env.development` and `.env.production` files in the `frontend` directory with the following contents:
+
+`.env.development`:
+
+```bash
+VITE_API_URL=http://localhost:3000
+```
+
+`.env.production`:
+
+```bash
+VITE_API_URL=YOUR_PRODUCTION_API_URL_HERE
+```
 
 5. Seed the database with initial seed data
 

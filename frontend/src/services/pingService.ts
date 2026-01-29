@@ -1,5 +1,7 @@
+import { BASE_URL } from "../constants";
+
 async function pingServer(): Promise<string> {
-  const response = await fetch("https://sijoittaja-backend-svc/ping", {
+  const response = await fetch(`${BASE_URL}/ping`, {
     method: "GET",
   });
 

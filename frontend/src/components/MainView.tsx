@@ -17,6 +17,11 @@ function MainView() {
     }
 
     findRoom();
+
+    const rooms = document.querySelectorAll("path[id]");
+    rooms.forEach((room) => {
+      room.classList.add("room");
+    });
   }, []);
 
   return (

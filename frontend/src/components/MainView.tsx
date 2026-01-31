@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import Exactum2 from "../assets/exactum-2.svg?react";
 import { findRoomById } from "../services/roomsService";
 import "./MainView.css";
+import RoomDetails from "./RoomDetails";
 
 function MainView() {
   const [activeRoomId, setActiveRoomId] = useState<string | null>(null);
+  const [isRoomDetailsOpen, setIsRoomDetailsOpen] = useState<boolean>(false);
 
   useEffect(() => {
     const rooms = document.querySelectorAll("path[data-room]");
@@ -34,6 +36,7 @@ function MainView() {
         console.log("Clicked room with id:", target.id);
         await findRoom(target.id);
         setActiveRoomId(target.id);
+        setIsRoomDetailsOpen(true);
       }
     }
   }
@@ -41,6 +44,9 @@ function MainView() {
   return (
     <div className="wrapper">
       <Exactum2 className="floor-image" onClick={handleClick} />
+      {isRoomDetailsOpen && (
+        <RoomDetails handleClose={() => setIsRoomDetailsOpen(false)} />
+      )}
     </div>
   );
 }

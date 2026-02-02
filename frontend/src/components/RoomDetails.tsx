@@ -22,8 +22,10 @@ function RoomDetails({
       transition={{ duration: 0.5, ease: "easeInOut" }}
       className="room-details"
     >
-      <X className="close-room-details" onClick={handleClose} />
-      {room.name}
+      <header className="room-header">
+        <h1 className="room-title">Huone</h1>
+        <X className="close-room-details" onClick={handleClose} />
+      </header>
     </motion.div>
   );
 }

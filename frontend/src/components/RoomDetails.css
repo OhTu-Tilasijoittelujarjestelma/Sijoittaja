@@ -9,12 +9,24 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 32px;
 }
 
 .close-room-details {
   position: absolute;
-  top: 8px;
   right: 8px;
   cursor: pointer;
+}
+
+.room-header {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.room-title {
+  margin: 0;
+  color: oklch(12.9% 0.042 264.695);
 }

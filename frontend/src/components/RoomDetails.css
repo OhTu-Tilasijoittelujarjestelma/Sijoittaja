@@ -16,6 +16,7 @@
   position: absolute;
   right: 8px;
   cursor: pointer;
+  fill: oklch(12.9% 0.042 264.695);
 }
 
 .room-header {

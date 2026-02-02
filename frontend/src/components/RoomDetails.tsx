@@ -1,8 +1,19 @@
 import { X } from "lucide-react";
 import { motion } from "motion/react";
+import type { Room } from "../types";
 import "./RoomDetails.css";
 
-function RoomDetails({ handleClose }: { handleClose: () => void }) {
+function RoomDetails({
+  room,
+  handleClose,
+}: {
+  room: Room | null;
+  handleClose: () => void;
+}) {
+  if (!room) {
+    return null;
+  }
+
   return (
     <motion.div
       initial={{ x: "100vw" }}
@@ -12,6 +23,7 @@ function RoomDetails({ handleClose }: { handleClose: () => void }) {
       className="room-details"
     >
       <X className="close-room-details" onClick={handleClose} />
+      {room.name}
     </motion.div>
   );
 }

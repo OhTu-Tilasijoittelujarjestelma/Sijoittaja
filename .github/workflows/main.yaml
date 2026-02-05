@@ -28,7 +28,8 @@ jobs:
   build-and-push-dev:
     if: |
       always()
-    needs: [frontend, backend]
+      && github.ref == 'refs/heads/dev'
+    needs: [frontend]
     runs-on: ubuntu-24.04
     permissions:
       contents: read

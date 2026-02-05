@@ -5,9 +5,9 @@ on:
     branches:
       - main
       - dev
-    paths:
-      - 'frontend/**'
-      - 'backend/**'
+    #paths:
+    #  - 'frontend/**'
+    #  - 'backend/**'
   pull_request:
     branches:
       - 'main'
@@ -29,7 +29,7 @@ jobs:
     if: |
       always()
       && github.ref == 'refs/heads/dev'
-    needs: [frontend]
+    needs: [frontend, backend]
     runs-on: ubuntu-24.04
     permissions:
       contents: read

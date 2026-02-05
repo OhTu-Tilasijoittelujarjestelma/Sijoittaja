@@ -50,10 +50,10 @@ jobs:
         with:
           push: true
           tags: |
-            ghcr.io/OhTu-Tilasijoittelujarjestelma/hytis:staging
-            ghcr.io/OhTu-Tilasijoittelujarjestelma/hytis:${{ github.sha }}
-          cache-from: type=registry,ref=ghcr.io/OhTu-Tilasijoittelujarjestelma/hytis:buildcache
-          cache-to: type=registry,ref=ghcr.io/OhTu-Tilasijoittelujarjestelma/hytis:buildcache,mode=max
+            ghcr.io/ohtu-tilasijoittelujarjestelma/hytis:staging
+            ghcr.io/ohtu-tilasijoittelujarjestelma/hytis:${{ github.sha }}
+          cache-from: type=registry,ref=ghcr.io/ohtu-tilasijoittelujarjestelma/hytis:buildcache
+          cache-to: type=registry,ref=ghcr.io/ohtu-tilasijoittelujarjestelma/hytis:buildcache,mode=max
           build-args: EXPO_PUBLIC_SOCKET_URL_WEB_ARG=https://hytis-ohtuprojekti-staging.ext.ocp-test-0.k8s.it.helsinki.fi
 #
   #build-and-push-prod:
@@ -80,8 +80,8 @@ jobs:
   #      with:
   #        push: true
   #        tags: |
-  #          ghcr.io/OhTu-Tilasijoittelujarjestelma/hytis:prod
-  #          ghcr.io/OhTu-Tilasijoittelujarjestelma/hytis:${{ github.sha }}
-  #        cache-from: type=registry,ref=ghcr.io/OhTu-Tilasijoittelujarjestelma/hytis:prodbuildcache
-  #        cache-to: type=registry,ref=ghcr.io/OhTu-Tilasijoittelujarjestelma/hytis:prodbuildcache,mode=max
+  #          ghcr.io/ohtu-tilasijoittelujarjestelma/hytis:prod
+  #          ghcr.io/ohtu-tilasijoittelujarjestelma/hytis:${{ github.sha }}
+  #        cache-from: type=registry,ref=ghcr.io/ohtu-tilasijoittelujarjestelma/hytis:prodbuildcache
+  #        cache-to: type=registry,ref=ghcr.io/ohtu-tilasijoittelujarjestelma/hytis:prodbuildcache,mode=max
   #        #build-args: EXPO_PUBLIC_SOCKET_URL_WEB_ARG=https://hytis-ohtuprojekti-staging.ext.ocp-prod-0.k8s.it.helsinki.fi

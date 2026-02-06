@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: sijoittaja-backend
-          image: l0uko/sijoittaja-backend:staging
+          image: sijoittaja-backend:staging
           ports:
             - containerPort: 3000
           env:
